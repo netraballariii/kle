@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Product Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            text-align: center;
+            background-image: url('ama.jpg');
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Search for Products on Amazon</h1>
+    <div id="searchContainer"></div>
+
+    <script>
+       
+        const form = document.createElement('form');
+        form.setAttribute('id', 'searchForm');
+        form.setAttribute('action', 'https://www.amazon.com/s');
+        form.setAttribute('method', 'GET');
+
+       
+        const input = document.createElement('input');
+        input.setAttribute('type', 'text');
+        input.setAttribute('name', 'k');
+        input.setAttribute('placeholder', 'Enter product name...');
+        input.setAttribute('required', true);
+
+       
+        const submitButton = document.createElement('input');
+        submitButton.setAttribute('type', 'submit');
+        submitButton.setAttribute('value', 'Search');
+
+       
+        form.appendChild(input);
+        form.appendChild(submitButton);
+
+      
+        document.getElementById('searchContainer').appendChild(form);
+    </script>
+
+</body>
+</html>
